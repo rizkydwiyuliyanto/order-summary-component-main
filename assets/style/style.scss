@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+$light: hsl(224, 23%, 55%);
+$dark: hsl(223, 47%, 23%);
+$background1: hsl(225, 100%, 94%);
+$background2: hsl(245, 75%, 52%);
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+.parent {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    background-image: url('./../../images/pattern-background-desktop.svg');
+
+    @media screen and (max-width: 375px) {
+        background-image: url('./../../images/pattern-background-mobile.svg');
+    }
+}
+
+.background {
+    width: 370px;
+    height: 520px;
+    background-color: hsl(225, 100%, 98%);
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+
+    @media screen and (max-width: 375px) {
+        width: 90%;
+    }
+
+    @media screen and (min-width: 1440px) {
+        height: 550px;
+    }
+}
+
+.image {
+    width: 100%;
+    height: 160px;
+
+}
+
+.content {
+    padding: 25px 0;
+    border: 1px solid unset;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .heading {
+        h3 {
+            font-family: 'Red Hat Display';
+            color: $dark;
+        }
+
+        position: relative;
+        top: 12px;
+    }
+
+    .desc {
+        text-align: center;
+        // border:1px solid red;
+        position: relative;
+        // top:-14px;
+        width: 80%;
+
+        span {
+            font-family: 'Red Hat Display';
+            color: $light;
+            font-size: 16px;
+            line-height: 25px;
+        }
+    }
+
+    .plan {
+        display: flex;
+        border: 1px solid unset;
+        width: 80%;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 16px;
+        // border: 1px solid red;
+        font-family: 'Red Hat Display';
+
+        .left {
+            display: flex;
+            align-items: center;
+
+            .annual-plan {
+                display: flex;
+                flex-direction: column;
+                margin-left: 16px;
+
+                :nth-child(1) {
+                    color: $dark;
+                    font-weight: 700;
+                }
+
+                :nth-child(2) {
+                    color: $light;
+                    margin-top: 2px;
+                }
+            }
+        }
+
+        .change {
+            color: $background2;
+            font-size: 12.6px;
+            cursor: pointer;
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+                color: #746CEF;
+            }
+        }
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        align-items: center;
+
+        .btn-proceed {
+            font-family: 'Red Hat Display';
+            border: 1px solid red;
+            background-color: $background2;
+            border: none;
+            outline: none;
+            padding: 1em 0;
+            font-weight: 700;
+            border-radius: 8px;
+            color: #ffffff;
+            cursor: pointer;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+            // font-size: 16px;
+            width: 100%;
+
+            &:hover {
+                background-color: #746CEF;
+            }
+        }
+
+        .btn-cancel {
+            font-family: 'Red Hat Display';
+            border: 1px solid red;
+            background: none;
+            border: none;
+            font-weight: 700;
+            // font-size: 16px;
+            outline: none;
+            padding: 1em 0;
+            width: fit-content;
+            border-radius: 8px;
+            color: $light;
+            cursor: pointer;
+
+            &:hover {
+                color: $dark;
+            }
+
+            // width: ;
+        }
+    }
+
+    @media screen and (max-width:375px) {
+        padding: 25px 30px;
+
+        .buttons {
+            width: 100%;
+        }
+
+        .plan {
+            width: 100%;
+            padding: 0 12px;
+        }
+    }
+}
